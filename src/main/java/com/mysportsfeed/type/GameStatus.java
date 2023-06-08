@@ -4,7 +4,7 @@ import lombok.Getter;
 import lombok.ToString;
 
 @ToString
-public enum StatusType {
+public enum GameStatus {
     UNPLAYED("unplayed"),
     IN_PROGRESS("in-progress"),
     POSTGAME_REVIEWING("postgame-reviewing"),
@@ -13,7 +13,7 @@ public enum StatusType {
     @Getter
     private String friendlyName;
 
-    StatusType(String friendlyName) {
+    GameStatus(String friendlyName) {
         this.friendlyName = friendlyName;
     }
 }

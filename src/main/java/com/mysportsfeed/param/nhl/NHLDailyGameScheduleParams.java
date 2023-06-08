@@ -1,7 +1,7 @@
 package com.mysportsfeed.param.nhl;
 
 import com.mysportsfeed.param.common.CommonSeasonParams;
-import com.mysportsfeed.type.StatusType;
+import com.mysportsfeed.type.GameStatus;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.SuperBuilder;
@@ -14,7 +14,7 @@ import java.util.List;
 public class NHLDailyGameScheduleParams extends CommonSeasonParams {
     private String date;
     private List<String> teams;
-    private StatusType status;
+    private GameStatus status;
 
     public String buildUrlString(String baseUrl, String apiSlug) {
         StringBuilder sb = new StringBuilder(super.buildUrlString(baseUrl, apiSlug));
