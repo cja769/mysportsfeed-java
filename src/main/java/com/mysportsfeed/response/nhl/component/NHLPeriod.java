@@ -8,8 +8,9 @@ import java.util.List;
 @Data
 public class NHLPeriod {
 
-    @JsonProperty("@number") // TODO I don't know what periodSummary.period.@number means
-    private Integer period;
+    // TODO I don't know what periodSummary.period.@number means
+//    @JsonProperty("@number")
+//    private Integer period;
 
     private Integer awayScore;
 

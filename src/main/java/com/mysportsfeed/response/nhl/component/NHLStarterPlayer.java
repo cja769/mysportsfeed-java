@@ -4,7 +4,9 @@ import lombok.Data;
 
 @Data
 public class NHLStarterPlayer {
-    private NHLPlayer player;
+
+    // TODO don't know structure
+    private Object player;
 
     private String position;
 }

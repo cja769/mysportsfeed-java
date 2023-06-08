@@ -9,7 +9,8 @@ public class NHLPenalty {
 
     private String teamAbbreviation;
 
-    private NHLPlayer penalizedPlayer;
+    // TODO don't know structure
+    private Object penalizedPlayer;
 
     private String severity;
 

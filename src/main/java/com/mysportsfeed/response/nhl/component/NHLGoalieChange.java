@@ -7,7 +7,9 @@ public class NHLGoalieChange {
 
     private String teamAbbreviation;
 
-    private NHLPlayer incomingGoalie;
+    // TODO don't know structure
+    private Object incomingGoalie;
 
-    private NHLPlayer outgoingGoalie;
+    // TODO don't know structure
+    private Object outgoingGoalie;
 }

@@ -7,7 +7,8 @@ import java.util.List;
 @Data
 public class NHLPlayerStatEntry {
 
-    private NHLPlayer player;
+    // TODO don't know structure
+    private Object player;
 
     private String team;
 

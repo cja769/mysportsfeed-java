@@ -7,5 +7,6 @@ public class NHLHit {
 
     private String teamAbbreviation;
 
-    private NHLPlayer player;
+    // TODO don't know structure
+    private Object player;
 }

@@ -7,9 +7,11 @@ import java.util.List;
 @Data
 public class NHLTeamGameLog {
 
-    private String game;
+    // TODO don't know structure
+    private Object game;
 
-    private String team;
+    // TODO don't know structure
+    private Object team;
 
     private List<NHLStat> stats;
 }

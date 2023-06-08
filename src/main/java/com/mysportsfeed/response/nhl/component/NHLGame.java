@@ -14,7 +14,9 @@ public class NHLGame {
 
     private String time;
 
-    private String awayTeam;
+    // TODO don't know structure
+    private Object awayTeam;
 
-    private String homeTeam;
+    // TODO don't know structure
+    private Object homeTeam;
 }

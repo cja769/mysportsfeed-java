@@ -5,9 +5,11 @@ import lombok.Data;
 @Data
 public class NHLDfsRow {
 
-    private NHLDfsPlayer player;
+    // TODO don't know structure
+    private Object player;
 
-    private String team;
+    // TODO don't know structure
+    private Object team;
 
     private NHLGame game;
 

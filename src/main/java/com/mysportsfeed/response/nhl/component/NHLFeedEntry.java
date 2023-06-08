@@ -8,8 +8,8 @@ import java.util.Map;
 @Data
 public class NHLFeedEntry {
 
-    //TODO Need to figure out the actual structure
-    private Map<String, Object> feed;
+    // TODO don't know structure
+    private Object feed;
 
     private String lastUpdatedOn;
 

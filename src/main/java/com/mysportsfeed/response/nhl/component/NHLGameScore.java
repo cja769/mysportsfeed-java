@@ -1,12 +1,25 @@
 package com.mysportsfeed.response.nhl.component;
 
-import com.mysportsfeed.response.common.GameScore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 
-@EqualsAndHashCode(callSuper = true)
 @Data
-public class NHLGameScore extends GameScore {
+public class NHLGameScore {
+
+    private NHLGameEntry game;
+
+    @JsonProperty("isUnplayed")
+    private boolean unplayed;
+
+    @JsonProperty("isInProgress")
+    private boolean inProgress;
+
+    @JsonProperty("isCompleted")
+    private boolean completed;
+
+    private Integer awayScore;
+
+    private Integer homeScore;
 
     private String currentPeriod;
 

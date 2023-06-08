@@ -7,7 +7,8 @@ import java.util.List;
 @Data
 public class NHLStanding {
 
-    private String team;
+    // TODO don't know structure
+    private Object team;
 
     private Integer rank;
 

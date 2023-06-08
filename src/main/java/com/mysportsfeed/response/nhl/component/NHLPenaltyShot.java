@@ -7,7 +7,8 @@ public class NHLPenaltyShot {
 
     private String teamAbbreviation;
 
-    private NHLPlayer shooter;
+    // TODO don't know structure
+    private Object shooter;
 
     private String outcome;
 }

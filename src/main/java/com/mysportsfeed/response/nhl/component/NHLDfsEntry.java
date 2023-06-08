@@ -9,8 +9,8 @@ import java.util.List;
 public class NHLDfsEntry {
 
     @JsonProperty("draftkings")
-    private List<NHLDfsRow> draftKings;
+    private List<NHLDfsRow> draftKings; // TODO hopefully this works?
 
     @JsonProperty("fanduel")
-    private List<NHLDfsRow> fanDuel;
+    private List<NHLDfsRow> fanDuel; // TODO hopefully this works?
 }

@@ -9,5 +9,6 @@ public class NHLPlayerEntry {
 
     private List<NHLStat> stats;
 
-    private NHLPlayer player;
+    // TODO don't know structure
+    private Object player;
 }

@@ -5,7 +5,8 @@ import lombok.Data;
 @Data
 public class NHLRosterPlayerEntry {
 
-    private NHLPlayer player;
+    // TODO don't know structure
+    private Object player;
 
     private String team;
 }

@@ -5,9 +5,11 @@ import lombok.Data;
 @Data
 public class NHLFaceoff {
 
-    private NHLPlayer awayPlayer;
+    // TODO don't know structure
+    private Object awayPlayer;
 
-    private NHLPlayer homePlayer;
+    // TODO don't know structure
+    private Object homePlayer;
 
     private String wonBy;
 }
