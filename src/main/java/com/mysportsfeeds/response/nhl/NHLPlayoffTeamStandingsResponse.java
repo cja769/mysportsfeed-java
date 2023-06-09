@@ -7,7 +7,7 @@ import lombok.Data;
 @Data
 public class NHLPlayoffTeamStandingsResponse {
 
-    @JsonProperty("playoffstandings")
+    @JsonProperty("playoffteamstandings")
     private NHLConferenceTeamStandings playoffTeamStandings;
 
 }

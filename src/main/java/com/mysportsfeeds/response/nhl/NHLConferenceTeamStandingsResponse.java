@@ -15,7 +15,7 @@ public class NHLConferenceTeamStandingsResponse {
     @Data
     public static class NHLConferenceTeamStandings {
         private String lastUpdatedOn;
-        private NHLConference conference;
+        private List<NHLConference> conference;
 
         @Data
         public static class NHLConference {

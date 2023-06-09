@@ -9,23 +9,23 @@ import java.net.http.HttpResponse;
 public class MySportsFeedsException extends Exception {
 
     @Getter
-    private HttpResponse<?> response;
+    private HttpResponse<String> response;
 
     @Getter
     private HttpRequest request;
 
-    public MySportsFeedsException(HttpRequest request, HttpResponse<?> response, String message, IOException e) {
-        super(message, e);
+    public MySportsFeedsException(HttpRequest request, HttpResponse<String> response, String message, IOException e) {
+        super(message + "\nRequest: " + request.uri() + "\nResponse: " + response.body(), e);
         this.request = request;
         this.response = response;
     }
 
-    public MySportsFeedsException(HttpRequest request, HttpResponse<?> response, String message) {
+    public MySportsFeedsException(HttpRequest request, HttpResponse<String> response, String message) {
         this(request, response, message, null);
     }
 
     public MySportsFeedsException(HttpRequest request, String message, Exception e) {
-        super(message, e);
+        super(message + "\nRequest: " + request.uri(), e);
         this.request = request;
     }
 

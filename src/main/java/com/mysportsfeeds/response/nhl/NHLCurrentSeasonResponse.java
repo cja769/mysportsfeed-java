@@ -23,8 +23,8 @@ public class NHLCurrentSeasonResponse {
         public static class NHLSeason {
 
             private NHLDetail details;
-            private List<NHLSupportedPlayerStat> supportedPlayerStats;
-            private List<NHLSupportedTeamStat> supportedTeamStats;
+            private NHLSupportedPlayerStat supportedPlayerStats;
+            private NHLSupportedTeamStat supportedTeamStats;
 
             @Data
             public static class NHLDetail {
@@ -40,12 +40,12 @@ public class NHLCurrentSeasonResponse {
 
             @Data
             public static class NHLSupportedTeamStat {
-                private NHLSupportedStat teamStat;
+                private List<NHLSupportedStat> teamStat;
             }
 
             @Data
             public static class NHLSupportedPlayerStat {
-                private NHLSupportedStat playerStat;
+                private List<NHLSupportedStat> playerStat;
             }
 
             @Data

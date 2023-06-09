@@ -4,7 +4,7 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
 public class MalformedRequestException extends MySportsFeedsException {
-    public MalformedRequestException(HttpRequest request, HttpResponse<?> response, String message) {
+    public MalformedRequestException(HttpRequest request, HttpResponse<String> response, String message) {
         super(request, response, message);
     }
 }

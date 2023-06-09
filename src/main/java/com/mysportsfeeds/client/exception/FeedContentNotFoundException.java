@@ -4,7 +4,7 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
 public class FeedContentNotFoundException extends MySportsFeedsException {
-    public FeedContentNotFoundException(HttpRequest request, HttpResponse<?> response, String message) {
+    public FeedContentNotFoundException(HttpRequest request, HttpResponse<String> response, String message) {
         super(request, response, message);
     }
 }

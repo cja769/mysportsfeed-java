@@ -12,13 +12,12 @@ import java.util.stream.Collectors;
 @Data
 @SuperBuilder
 public class CommonParams {
-    private FormatType formatType;
     private Boolean force;
 
     public String buildUrlString(String baseUrl, String apiSlug) {
         StringBuilder sb = new StringBuilder(baseUrl);
         sb.append(apiSlug);
-        sb.append(".").append(getFormatType().getFriendlyName()).append("?");
+        sb.append(".").append(FormatType.JSON.getFriendlyName()).append("?");
         addParameter("force", sb, getForce());
         sb.deleteCharAt(sb.length() - 1);
         return sb.toString();

@@ -16,7 +16,6 @@ public class NHLPeriod {
     private Integer homeShots;
     private NHLScoringList scoring;
     private NHLPenaltyList penalties;
-    private List<NHLPeriodTotal> periodTotals;
 
     @Data
     public static class NHLScoringList {
@@ -50,15 +49,6 @@ public class NHLPeriod {
             private Integer durationMinutes;
             private String type;
         }
-    }
-
-    @Data
-    public static class NHLPeriodTotal {
-
-        private Integer awayScore;
-        private Integer homeScore;
-        private Integer awayShots;
-        private Integer homeShots;
     }
 
 }

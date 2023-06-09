@@ -66,8 +66,8 @@ public class NHLClient extends BaseClient {
         return execute(params.buildUrlString(baseUrl, "/division_team_standings"), NHLDivisionTeamStandingsResponse.class);
     }
 
-    public NHLConferenceTeamStandingsResponse getPlayoffTeamStandings(NHLTeamStandingsParams params) throws MySportsFeedsException {
-        return execute(params.buildUrlString(baseUrl, "/playoff_team_standings"), NHLConferenceTeamStandingsResponse.class);
+    public NHLPlayoffTeamStandingsResponse getPlayoffTeamStandings(NHLTeamStandingsParams params) throws MySportsFeedsException {
+        return execute(params.buildUrlString(baseUrl, "/playoff_team_standings"), NHLPlayoffTeamStandingsResponse.class);
     }
 
     public NHLBoxScoreResponse getBoxScore(NHLBoxScoreParams params) throws MySportsFeedsException {

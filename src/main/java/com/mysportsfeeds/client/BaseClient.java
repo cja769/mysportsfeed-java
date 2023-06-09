@@ -20,8 +20,6 @@ public abstract class BaseClient {
     private final String apiKey;
     @Getter
     private final String password;
-    @Setter
-    private boolean compress = true;
 
     public BaseClient(String apiKey, String password) {
         if (apiKey == null || apiKey.isBlank()) {
@@ -34,20 +32,13 @@ public abstract class BaseClient {
         this.password = password;
     }
 
-    protected  <T> T execute(String url, Class<T> responseType) throws MySportsFeedsException {
+    protected <T> T execute(String url, Class<T> responseType) throws MySportsFeedsException {
         String authorization = Base64.getEncoder().encodeToString((getApiKey() + ":" + getPassword()).getBytes());
         HttpClient httpClient = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder(URI.create(url))
             .GET()
             .header("Authorization", "Basic " + authorization)
-            .header("Accept-Encoding", "gzip")
             .build();
-        if (!compress) {
-            request = HttpRequest.newBuilder(URI.create(url))
-                .GET()
-                .header("Authorization", "Basic " + authorization)
-                .build();
-        }
         HttpResponse<String> response;
         try {
             response = httpClient.send(request, BodyHandlers.ofString());
@@ -65,6 +56,9 @@ public abstract class BaseClient {
         }
         if (response.statusCode() == 403) {
             throw new ForbiddenException(request, response, "Authentication used for request did not have authorization. Subscribe to feed for acccess");
+        }
+        if (response.statusCode() == 404) {
+            throw new FeedNotFoundException(request, response, "Feed was not found");
         }
         if (response.statusCode() == 429) {
             throw new TooManyRequestsException(request, response, "Rate limit has been hit");

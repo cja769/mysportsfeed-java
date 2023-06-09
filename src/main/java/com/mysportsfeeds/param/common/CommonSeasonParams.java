@@ -18,7 +18,7 @@ public class CommonSeasonParams extends CommonParams {
             throw new IllegalArgumentException("Season type " + getSeasonType().name() + " requires a year");
         }
         StringBuilder sb = new StringBuilder(baseUrl);
-        sb.append(getSeasonType().buildKey(getStartYear(), getEndYear()));
+        sb.append("/").append(getSeasonType().buildKey(getStartYear(), getEndYear()));
         sb.append(apiSlug);
         return super.buildUrlString(sb.toString(), "");
     }

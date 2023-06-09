@@ -5,6 +5,8 @@ import com.mysportsfeeds.response.nhl.common.NHLGame;
 import com.mysportsfeeds.response.nhl.common.NHLPeriodSummary;
 import lombok.Data;
 
+import java.util.List;
+
 @Data
 public class NHLScoreboardResponse {
 
@@ -15,7 +17,7 @@ public class NHLScoreboardResponse {
 
         private String lastUpdatedOn;
 
-        private NHLGameScore gameScore;
+        private List<NHLGameScore> gameScore;
 
         @Data
         public static class NHLGameScore {

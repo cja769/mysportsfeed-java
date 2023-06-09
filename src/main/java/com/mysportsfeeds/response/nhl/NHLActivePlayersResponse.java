@@ -9,6 +9,9 @@ import java.util.List;
 @Data
 public class NHLActivePlayersResponse {
 
+    @JsonProperty("activeplayers")
+    private NHLActivePlayers activePlayers;
+
     @Data
     public static class NHLActivePlayers {
         private String lastUpdatedOn;

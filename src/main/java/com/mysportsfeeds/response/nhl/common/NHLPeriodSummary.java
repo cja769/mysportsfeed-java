@@ -2,8 +2,20 @@ package com.mysportsfeeds.response.nhl.common;
 
 import lombok.Data;
 
+import java.util.List;
+
 @Data
 public class NHLPeriodSummary {
 
-    private NHLPeriod period;
+    private List<NHLPeriod> period;
+    private NHLPeriodTotal periodTotals;
+
+    @Data
+    public static class NHLPeriodTotal {
+
+        private Integer awayScore;
+        private Integer homeScore;
+        private Integer awayShots;
+        private Integer homeShots;
+    }
 }
