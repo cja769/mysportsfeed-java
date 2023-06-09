@@ -4,9 +4,9 @@ import com.mysportsfeed.client.exception.MySportsFeedException;
 import com.mysportsfeed.param.common.CommonSeasonParams;
 import com.mysportsfeed.param.nhl.*;
 import com.mysportsfeed.response.nhl.*;
-import com.mysportsfeed.response.nhl.component.NHLPlayByPlay;
-import com.mysportsfeed.response.nhl.component.NHLPlayerGameLogList;
-import com.mysportsfeed.response.nhl.component.NHLRosterPlayers;
+import com.mysportsfeed.response.nhl.NHLPlayByPlayResponse;
+import com.mysportsfeed.response.nhl.NHLPlayerGameLogResponse;
+import com.mysportsfeed.response.nhl.NHLRosterPlayersResponse;
 import lombok.Setter;
 
 public class NHLClient extends BaseClient {
@@ -18,84 +18,84 @@ public class NHLClient extends BaseClient {
         super(apiKey, password);
     }
 
-    public NHLSchedule getFullGameSchedule(NHLFullGameScheduleParams params) throws MySportsFeedException {
-        return execute(params.buildUrlString(baseUrl, "/full_game_schedule"), NHLSchedule.class);
+    public NHLFullGameScheduleResponse getFullGameSchedule(NHLFullGameScheduleParams params) throws MySportsFeedException {
+        return execute(params.buildUrlString(baseUrl, "/full_game_schedule"), NHLFullGameScheduleResponse.class);
     }
 
-    public NHLSchedule getDailyGameSchedule(NHLDailyGameScheduleParams params) throws MySportsFeedException {
-        return execute(params.buildUrlString(baseUrl, "/daily_game_schedule"), NHLSchedule.class);
+    public NHLDailyGameScheduleResponse getDailyGameSchedule(NHLDailyGameScheduleParams params) throws MySportsFeedException {
+        return execute(params.buildUrlString(baseUrl, "/daily_game_schedule"), NHLDailyGameScheduleResponse.class);
     }
 
-    public NHLScoreboard getScoreboard(NHLScoreboardParams params) throws MySportsFeedException {
-        return execute(params.buildUrlString(baseUrl, "/scoreboard"), NHLScoreboard.class);
+    public NHLScoreboardResponse getScoreboard(NHLScoreboardParams params) throws MySportsFeedException {
+        return execute(params.buildUrlString(baseUrl, "/scoreboard"), NHLScoreboardResponse.class);
     }
 
-    public NHLLatestUpdates getLatestUpdates(CommonSeasonParams params) throws MySportsFeedException {
-        return execute(params.buildUrlString(baseUrl, "/latest_updates"), NHLLatestUpdates.class);
+    public NHLLatestUpdatesResponse getLatestUpdates(CommonSeasonParams params) throws MySportsFeedException {
+        return execute(params.buildUrlString(baseUrl, "/latest_updates"), NHLLatestUpdatesResponse.class);
     }
 
-    public NHLSeasonList getCurrentSeason(NHLCurrentSeasonParams params) throws MySportsFeedException {
-        return execute(params.buildUrlString(baseUrl, "/current_season"), NHLSeasonList.class);
+    public NHLCurrentSeasonResponse getCurrentSeason(NHLCurrentSeasonParams params) throws MySportsFeedException {
+        return execute(params.buildUrlString(baseUrl, "/current_season"), NHLCurrentSeasonResponse.class);
     }
 
-    public NHLPlayerStats getCumulativePlayerStats(NHLCumulativePlayerStatsParams params) throws MySportsFeedException {
-        return execute(params.buildUrlString(baseUrl, "/cumulative_player_stats"), NHLPlayerStats.class);
+    public NHLCumulativePlayerStatsResponse getCumulativePlayerStats(NHLCumulativePlayerStatsParams params) throws MySportsFeedException {
+        return execute(params.buildUrlString(baseUrl, "/cumulative_player_stats"), NHLCumulativePlayerStatsResponse.class);
     }
 
-    public NHLPlayerStats getDailyPlayerStats(NHLDailyPlayerStatsParams params) throws MySportsFeedException {
-        return execute(params.buildUrlString(baseUrl, "/daily_player_stats"), NHLPlayerStats.class);
+    public NHLDailyPlayerStatsResponse getDailyPlayerStats(NHLDailyPlayerStatsParams params) throws MySportsFeedException {
+        return execute(params.buildUrlString(baseUrl, "/daily_player_stats"), NHLDailyPlayerStatsResponse.class);
     }
 
-    public NHLPlayerGameLogList getPlayerGameLogs(NHLPlayerGameLogsParams params) throws MySportsFeedException {
-        return execute(params.buildUrlString(baseUrl, "/player_gamelogs"), NHLPlayerGameLogList.class);
+    public NHLPlayerGameLogResponse getPlayerGameLogs(NHLPlayerGameLogsParams params) throws MySportsFeedException {
+        return execute(params.buildUrlString(baseUrl, "/player_gamelogs"), NHLPlayerGameLogResponse.class);
     }
 
-    public NHLTeamGameLogList getTeamGameLogs(NHLTeamGameLogsParams params) throws MySportsFeedException {
-        return execute(params.buildUrlString(baseUrl, "/team_gamelogs"), NHLTeamGameLogList.class);
+    public NHLTeamGameLogResponse getTeamGameLogs(NHLTeamGameLogsParams params) throws MySportsFeedException {
+        return execute(params.buildUrlString(baseUrl, "/team_gamelogs"), NHLTeamGameLogResponse.class);
     }
 
-    public NHLOverallTeamStandings getOverallTeamStandings(NHLTeamStandingsParams params) throws MySportsFeedException {
-        return execute(params.buildUrlString(baseUrl, "/overall_team_standings"), NHLOverallTeamStandings.class);
+    public NHLOverallTeamStandingsResponse getOverallTeamStandings(NHLTeamStandingsParams params) throws MySportsFeedException {
+        return execute(params.buildUrlString(baseUrl, "/overall_team_standings"), NHLOverallTeamStandingsResponse.class);
     }
 
-    public NHLConferenceTeamStandings getConferenceTeamStandings(NHLTeamStandingsParams params) throws MySportsFeedException {
-        return execute(params.buildUrlString(baseUrl, "/conference_team_standings"), NHLConferenceTeamStandings.class);
+    public NHLConferenceTeamStandingsResponse getConferenceTeamStandings(NHLTeamStandingsParams params) throws MySportsFeedException {
+        return execute(params.buildUrlString(baseUrl, "/conference_team_standings"), NHLConferenceTeamStandingsResponse.class);
     }
 
-    public NHLDivisionTeamStandings getDivisionTeamStandings(NHLTeamStandingsParams params) throws MySportsFeedException {
-        return execute(params.buildUrlString(baseUrl, "/division_team_standings"), NHLDivisionTeamStandings.class);
+    public NHLDivisionTeamStandingsResponse getDivisionTeamStandings(NHLTeamStandingsParams params) throws MySportsFeedException {
+        return execute(params.buildUrlString(baseUrl, "/division_team_standings"), NHLDivisionTeamStandingsResponse.class);
     }
 
-    public NHLConferenceTeamStandings getPlayoffTeamStandings(NHLTeamStandingsParams params) throws MySportsFeedException {
-        return execute(params.buildUrlString(baseUrl, "/playoff_team_standings"), NHLConferenceTeamStandings.class);
+    public NHLConferenceTeamStandingsResponse getPlayoffTeamStandings(NHLTeamStandingsParams params) throws MySportsFeedException {
+        return execute(params.buildUrlString(baseUrl, "/playoff_team_standings"), NHLConferenceTeamStandingsResponse.class);
     }
 
-    public NHLBoxScore getBoxScore(NHLBoxScoreParams params) throws MySportsFeedException {
-        return execute(params.buildUrlString(baseUrl, "/game_boxscore"), NHLBoxScore.class);
+    public NHLBoxScoreResponse getBoxScore(NHLBoxScoreParams params) throws MySportsFeedException {
+        return execute(params.buildUrlString(baseUrl, "/game_boxscore"), NHLBoxScoreResponse.class);
     }
 
-    public NHLPlayByPlay getPlayByPlay(NHLPlayByPlayParams params) throws MySportsFeedException {
-        return execute(params.buildUrlString(baseUrl, "/game_playbyplay"), NHLPlayByPlay.class);
+    public NHLPlayByPlayResponse getPlayByPlay(NHLPlayByPlayParams params) throws MySportsFeedException {
+        return execute(params.buildUrlString(baseUrl, "/game_playbyplay"), NHLPlayByPlayResponse.class);
     }
 
-    public NHLRosterPlayers getRosterPlayers(NHLRosterPlayersParams params) throws MySportsFeedException {
-        return execute(params.buildUrlString(baseUrl, "/roster_players"), NHLRosterPlayers.class);
+    public NHLRosterPlayersResponse getRosterPlayers(NHLRosterPlayersParams params) throws MySportsFeedException {
+        return execute(params.buildUrlString(baseUrl, "/roster_players"), NHLRosterPlayersResponse.class);
     }
 
-    public NHLGameLineup getGameStartingLineup(NHLGameStartingLineupParams params) throws MySportsFeedException {
-        return execute(params.buildUrlString(baseUrl, "/game_startinglineup"), NHLGameLineup.class);
+    public NHLGameLineupResponse getGameStartingLineup(NHLGameStartingLineupParams params) throws MySportsFeedException {
+        return execute(params.buildUrlString(baseUrl, "/game_startinglineup"), NHLGameLineupResponse.class);
     }
 
-    public NHLActivePlayers getActivePlayers(NHLActivePlayersParams params) throws MySportsFeedException {
-        return execute(params.buildUrlString(baseUrl, "/active_players"), NHLActivePlayers.class);
+    public NHLActivePlayersResponse getActivePlayers(NHLActivePlayersParams params) throws MySportsFeedException {
+        return execute(params.buildUrlString(baseUrl, "/active_players"), NHLActivePlayersResponse.class);
     }
 
-    public NHLPlayerInjuries getInjuredPlayers(NHLInjuredPlayersParams params) throws MySportsFeedException {
-        return execute(params.buildUrlString(baseUrl, "/player_injuries"), NHLPlayerInjuries.class);
+    public NHLPlayerInjuriesResponse getInjuredPlayers(NHLInjuredPlayersParams params) throws MySportsFeedException {
+        return execute(params.buildUrlString(baseUrl, "/player_injuries"), NHLPlayerInjuriesResponse.class);
     }
 
-    public NHLDailyDfs getDailyDfs(NHLDailyDfsParams params) throws MySportsFeedException {
-        return execute(params.buildUrlString(baseUrl, "/daily_dfs"), NHLDailyDfs.class);
+    public NHLDailyDfsResponse getDailyDfs(NHLDailyDfsParams params) throws MySportsFeedException {
+        return execute(params.buildUrlString(baseUrl, "/daily_dfs"), NHLDailyDfsResponse.class);
     }
 
 }
