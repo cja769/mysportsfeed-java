@@ -11,7 +11,7 @@ import java.util.List;
 public class NHLClientTest {
 
     private final NHLClient sut;
-    private final String baseUrl = "https://scrambled-api.mysportsfeeds.com/v1.1/pull/nhl";
+    private final String baseUrl = "https://scrambled-api.mysportsfeeds.com/v1.2/pull/nhl";
 
     public NHLClientTest() {
         NHLClient nhlClient = new NHLClient("apikey", "password");
