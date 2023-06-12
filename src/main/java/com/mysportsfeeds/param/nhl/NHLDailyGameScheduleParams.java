@@ -14,7 +14,7 @@ import java.util.List;
 public class NHLDailyGameScheduleParams extends CommonSeasonParams {
     private String date;
     private List<String> teams;
-    private GameStatus status;
+    private List<GameStatus> statuses;
 
     public String buildUrlString(String baseUrl, String apiSlug) {
         StringBuilder sb = new StringBuilder(super.buildUrlString(baseUrl, apiSlug));
@@ -25,7 +25,7 @@ public class NHLDailyGameScheduleParams extends CommonSeasonParams {
         }
         addParameter("fordate", sb, getDate());
         addParameter("team", sb, getTeams());
-        addParameter("status", sb, getStatus());
+        addParameter("status", sb, getStatuses());
         sb.deleteCharAt(sb.length() - 1);
         return sb.toString();
     }
