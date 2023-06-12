@@ -18,4 +18,9 @@ public class NHLGame {
     private NHLTeam awayTeam;
     private NHLTeam homeTeam;
     private String location;
+    private String scheduleStatus;
+    @JsonFormat(shape = Shape.STRING, pattern = "yyyy-MM-dd")
+    private Date originalDate;
+    private String originalTime;
+    private String delayedOrPostponedReason;
 }

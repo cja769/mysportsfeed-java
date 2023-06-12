@@ -12,7 +12,7 @@ import lombok.Setter;
 public class NHLClient extends BaseClient {
 
     @Setter
-    private String baseUrl = "https://api.mysportsfeeds.com/v1.0/pull/nhl";
+    private String baseUrl = "https://api.mysportsfeeds.com/v1.1/pull/nhl";
 
     public NHLClient(String apiKey, String password) {
         super(apiKey, password);

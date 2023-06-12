@@ -11,7 +11,7 @@ import java.util.List;
 public class NHLClientTest {
 
     private final NHLClient sut;
-    private final String baseUrl = "https://scrambled-api.mysportsfeeds.com/v1.0/pull/nhl";
+    private final String baseUrl = "https://scrambled-api.mysportsfeeds.com/v1.1/pull/nhl";
 
     public NHLClientTest() {
         NHLClient nhlClient = new NHLClient("apikey", "password");
@@ -69,9 +69,8 @@ public class NHLClientTest {
     @Test
     public void test_getCumulativePlayerStats() throws MySportsFeedsException {
         NHLCumulativePlayerStatsParams params = NHLCumulativePlayerStatsParams.builder()
-            .seasonType(SeasonType.REGULAR)
-            .startYear(2022)
-            .endYear(2023)
+            .seasonType(SeasonType.PLAYOFF)
+            .startYear(2023)
             .build();
         sut.getCumulativePlayerStats(params);
     }

@@ -28,6 +28,7 @@ public class NHLDetailedPlayer extends NHLPlayer {
     @JsonProperty("IsRookie")
     private Boolean rookie;
     private NHLDetailedPlayerExternalMapping externalMapping;
+    private String officialImageSrc;
 
     @Data
     public static class NHLDetailedPlayerExternalMapping {
