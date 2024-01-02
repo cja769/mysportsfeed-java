@@ -1,9 +1,8 @@
 package com.mysportsfeeds.response.nhl;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.mysportsfeeds.response.nhl.NHLPlayByPlayResponse.NHLPlayByPlay.NHLPlays.NHLPlay;
 import com.mysportsfeeds.response.nhl.common.NHLGame;
-import com.mysportsfeeds.response.nhl.common.NHLPlayer;
+import com.mysportsfeeds.response.common.Player;
 import lombok.Data;
 
 import java.util.List;
@@ -41,21 +40,21 @@ public class NHLPlayByPlayResponse {
 
                 @Data
                 public static class NHLFaceoff {
-                    private NHLPlayer awayPlayer;
-                    private NHLPlayer homePlayer;
+                    private Player awayPlayer;
+                    private Player homePlayer;
                     private String wonBy;
                 }
 
                 @Data
                 public static class NHLShot {
                     private String teamAbbreviation;
-                    private NHLPlayer shooter;
+                    private Player shooter;
                 }
 
                 @Data
                 public static class NHLHit {
                     private String teamAbbreviation;
-                    private NHLPlayer player;
+                    private Player player;
                 }
 
                 @Data
@@ -63,26 +62,26 @@ public class NHLPlayByPlayResponse {
 
                     private String specialTeam;
                     private String teamAbbreviation;
-                    private NHLPlayer goalScorer;
+                    private Player goalScorer;
                     @JsonProperty("assist1Player")
-                    private NHLPlayer assist1Player;
+                    private Player assist1Player;
                     @JsonProperty("assist2Player")
-                    private NHLPlayer assist2Player;
+                    private Player assist2Player;
                 }
 
                 @Data
                 public static class NHLGoalieChange {
 
                     private String teamAbbreviation;
-                    private NHLPlayer incomingGoalie;
-                    private NHLPlayer outgoingGoalie;
+                    private Player incomingGoalie;
+                    private Player outgoingGoalie;
                 }
 
                 @Data
                 public static class NHLPenaltyShot {
 
                     private String teamAbbreviation;
-                    private NHLPlayer shooter;
+                    private Player shooter;
                     private String outcome;
                 }
 
@@ -90,7 +89,7 @@ public class NHLPlayByPlayResponse {
                 public static class NHLPlayByPlayPenalty {
 
                     private String teamAbbreviation;
-                    private NHLPlayer penalizedPlayer;
+                    private Player penalizedPlayer;
                     private String severity;
                     private Integer durationMinutes;
                     private String type;

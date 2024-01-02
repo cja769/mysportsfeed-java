@@ -1,6 +1,7 @@
 package com.mysportsfeeds.response.nhl.common;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mysportsfeeds.response.common.DetailedPlayer;
 import lombok.Data;
 
 import java.util.List;
@@ -26,11 +27,11 @@ public class NHLPeriod {
         public static class NHLGoalScored {
             private String time;
             private String teamAbbreviation;
-            private NHLDetailedPlayer goalScorer;
+            private DetailedPlayer goalScorer;
             @JsonProperty("assist1Player")
-            private NHLDetailedPlayer assist1Player;
+            private DetailedPlayer assist1Player;
             @JsonProperty("assist2Player")
-            private NHLDetailedPlayer assist2Player;
+            private DetailedPlayer assist2Player;
         }
     }
 
@@ -44,7 +45,7 @@ public class NHLPeriod {
 
             private String time;
             private String teamAbbreviation;
-            private NHLDetailedPlayer penalizedPlayer;
+            private DetailedPlayer penalizedPlayer;
             private String severity;
             private Integer durationMinutes;
             private String type;

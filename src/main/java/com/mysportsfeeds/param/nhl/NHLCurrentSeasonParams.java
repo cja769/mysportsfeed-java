@@ -19,7 +19,7 @@ public class NHLCurrentSeasonParams extends CommonParams {
         } else {
             sb.append("&");
         }
-        addParameter("fordate", sb, getDate());
+        addParameter("date", sb, getDate());
         sb.deleteCharAt(sb.length() - 1);
         return sb.toString();
     }

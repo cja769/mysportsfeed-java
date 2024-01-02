@@ -1,6 +1,9 @@
 package com.mysportsfeeds.response.nhl.common;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mysportsfeeds.response.common.DetailedPlayer;
+import com.mysportsfeeds.response.common.Stats;
+import com.mysportsfeeds.response.common.Team;
 import lombok.Data;
 
 import java.util.List;
@@ -14,9 +17,9 @@ public class NHLPlayerStats {
     @Data
     public static class NHLPlayerStatEntry {
 
-        private NHLDetailedPlayer player;
-        private NHLTeam team;
-        private NHLStats stats;
+        private DetailedPlayer player;
+        private Team team;
+        private Stats stats;
 
     }
 

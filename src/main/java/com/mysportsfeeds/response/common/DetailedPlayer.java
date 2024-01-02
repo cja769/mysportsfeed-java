@@ -1,4 +1,4 @@
-package com.mysportsfeeds.response.nhl.common;
+package com.mysportsfeeds.response.common;
 
 import com.fasterxml.jackson.annotation.JsonAnySetter;
 import com.fasterxml.jackson.annotation.JsonFormat;
@@ -15,35 +15,25 @@ import java.util.List;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class NHLDetailedPlayer extends NHLPlayer {
+public class DetailedPlayer extends Player {
 
-    @JsonProperty("Height")
+    private Team currentTeam;
+    private String currentRosterStatus;
+    private String currentInjury;
     private String height;
-    @JsonProperty("Weight")
     private String weight;
-    @JsonProperty("BirthCity")
-    private String birthCity;
-    @JsonProperty("BirthCountry")
-    private String birthCountry;
-    @JsonProperty("BirthDate")
-    @JsonFormat(shape = Shape.STRING, pattern = "yyyy-MM-dd")
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private Date birthDate;
-    @JsonProperty("Age")
     private Integer age;
-    @JsonProperty("IsRookie")
+    private String birthCity;
+    private String birthCountry;
     private Boolean rookie;
-    private NHLDetailedPlayerExternalMapping externalMapping;
-    private String officialImageSrc;
-    @JsonProperty("HighSchool")
     private String highSchool;
-    @JsonProperty("College")
     private String college;
-    @JsonProperty("Twitter")
-    private String twitter;
-    @JsonProperty("RosterStatus")
-    private String rosterStatus;
-    private NHLDraft draft;
     private NHLPlayerHandednessList handedness;
+    private String officialImageSrc;
+    private List<SocialMedia> socialMediaAccounts;
+    private NHLDraft draft;
     private NHLContractYear currentContractYear;
 
     @Data
@@ -71,7 +61,7 @@ public class NHLDetailedPlayer extends NHLPlayer {
     public static class NHLDraft {
         @JsonProperty("Year")
         private Integer year;
-        private NHLTeam team;
+        private Team team;
         @JsonProperty("Round")
         private Integer round;
         @JsonProperty("RoundPick")
@@ -104,7 +94,7 @@ public class NHLDetailedPlayer extends NHLPlayer {
 
         @Data
         public static class NHLContractYearContract {
-            private NHLTeam signingTeam;
+            private Team signingTeam;
             @JsonProperty("SignedOn")
             @JsonFormat(shape = Shape.STRING, pattern = "yyyy-MM-dd")
             private Date signedOn;
@@ -121,11 +111,4 @@ public class NHLDetailedPlayer extends NHLPlayer {
         }
     }
 
-    @Data
-    public static class NHLDetailedPlayerExternalMapping {
-        @JsonProperty("Source")
-        private String source;
-        @JsonProperty("ID")
-        private String id;
-    }
 }

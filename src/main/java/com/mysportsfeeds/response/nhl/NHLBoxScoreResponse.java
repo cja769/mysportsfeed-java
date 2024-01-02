@@ -1,10 +1,10 @@
 package com.mysportsfeeds.response.nhl;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.mysportsfeeds.response.nhl.common.NHLDetailedPlayer;
+import com.mysportsfeeds.response.common.DetailedPlayer;
 import com.mysportsfeeds.response.nhl.common.NHLGame;
 import com.mysportsfeeds.response.nhl.common.NHLPeriodSummary;
-import com.mysportsfeeds.response.nhl.common.NHLStats;
+import com.mysportsfeeds.response.common.Stats;
 import lombok.Data;
 
 import java.util.List;
@@ -25,14 +25,14 @@ public class NHLBoxScoreResponse {
 
         @Data
         public static class NHLAwayTeam {
-            private NHLStats awayTeamStats;
+            private Stats awayTeamStats;
             private NHLPlayerEntryPlayer awayPlayers;
         }
 
         @Data
         public static class NHLHomeTeam {
 
-            private NHLStats homeTeamStats;
+            private Stats homeTeamStats;
             private NHLPlayerEntryPlayer homePlayers;
 
         }
@@ -44,8 +44,8 @@ public class NHLBoxScoreResponse {
             @Data
             public static class NHLPlayerEntry {
 
-                private NHLStats stats;
-                private NHLDetailedPlayer player;
+                private Stats stats;
+                private DetailedPlayer player;
             }
         }
     }

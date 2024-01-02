@@ -23,16 +23,18 @@ public class NHLTeamGameLogsParams extends CommonSeasonParams {
     private Integer limit;
 
     public String buildUrlString(String baseUrl, String apiSlug) {
-        StringBuilder sb = new StringBuilder(super.buildUrlString(baseUrl, apiSlug));
+        if (date == null || date.isBlank()) {
+            throw new IllegalArgumentException("Date is required");
+        }
+        StringBuilder sb = new StringBuilder(super.buildUrlString(baseUrl, "/date/" + date + apiSlug));
         if (sb.indexOf("?") == -1) {
             sb.append("?");
         } else {
             sb.append("&");
         }
         addParameter("team", sb, getTeams());
-        addParameter("date", sb, getDate());
         addParameter("game", sb, getGames());
-        addParameter("teamstats", sb, getTeamStats());
+        addParameter("stats", sb, getTeamStats());
         addSortParameters("sort", sb, getSortParams());
         addParameter("offset", sb, getOffset());
         addParameter("limit", sb, getLimit());

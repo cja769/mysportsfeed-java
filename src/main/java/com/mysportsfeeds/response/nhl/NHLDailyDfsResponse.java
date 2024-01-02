@@ -2,8 +2,8 @@ package com.mysportsfeeds.response.nhl;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mysportsfeeds.response.nhl.common.NHLGame;
-import com.mysportsfeeds.response.nhl.common.NHLPlayer;
-import com.mysportsfeeds.response.nhl.common.NHLTeam;
+import com.mysportsfeeds.response.common.Player;
+import com.mysportsfeeds.response.common.Team;
 import lombok.Data;
 
 import java.util.List;
@@ -28,8 +28,8 @@ public class NHLDailyDfsResponse {
             @Data
             public static class NHLDfsRow {
 
-                private NHLPlayer player;
-                private NHLTeam team;
+                private Player player;
+                private Team team;
                 private NHLGame game;
                 private String salary;
                 private Double fantasyPoints;

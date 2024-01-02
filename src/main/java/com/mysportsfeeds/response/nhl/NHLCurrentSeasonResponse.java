@@ -3,6 +3,7 @@ package com.mysportsfeeds.response.nhl;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonFormat.Shape;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mysportsfeeds.response.common.References.StatReference;
 import lombok.Data;
 
 import java.util.Date;
@@ -10,50 +11,23 @@ import java.util.List;
 
 @Data
 public class NHLCurrentSeasonResponse {
-    @JsonProperty("currentseason")
-    private NHLCurrentSeason currentSeason;
+
+    private String lastUpdatedOn;
+    private List<NHLSeason> seasons;
 
     @Data
-    public static class NHLCurrentSeason {
+    public static class NHLSeason {
 
-        private String lastUpdatedOn;
-        private List<NHLSeason> season;
+        private String name;
+        private String slug;
+        @JsonFormat(pattern = "yyyy-MM-dd")
+        private Date startDate;
+        @JsonFormat(pattern = "yyyy-MM-dd")
+        private Date endDate;
+        private String seasonInterval;
+        private List<StatReference> supportedPlayerStats;
+        private List<StatReference> supportedTeamStats;
+        private Object notes; // I don't know the structure
 
-        @Data
-        public static class NHLSeason {
-
-            private NHLDetail details;
-            private NHLSupportedPlayerStat supportedPlayerStats;
-            private NHLSupportedTeamStat supportedTeamStats;
-
-            @Data
-            public static class NHLDetail {
-
-                private String name;
-                private String slug;
-                @JsonFormat(shape = Shape.STRING, pattern = "yyyy-MM-dd")
-                private Date startDate;
-                @JsonFormat(shape = Shape.STRING, pattern = "yyyy-MM-dd")
-                private Date endDate;
-                private String intervalType;
-            }
-
-            @Data
-            public static class NHLSupportedTeamStat {
-                private List<NHLSupportedStat> teamStat;
-            }
-
-            @Data
-            public static class NHLSupportedPlayerStat {
-                private List<NHLSupportedStat> playerStat;
-            }
-
-            @Data
-            public static class NHLSupportedStat {
-                private String category;
-                private String name;
-                private String abbreviation;
-            }
-        }
     }
 }

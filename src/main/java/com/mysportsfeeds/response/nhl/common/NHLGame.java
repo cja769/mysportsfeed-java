@@ -3,6 +3,7 @@ package com.mysportsfeeds.response.nhl.common;
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonFormat.Shape;
+import com.mysportsfeeds.response.common.Team;
 import lombok.Data;
 
 import java.util.Date;
@@ -15,8 +16,8 @@ public class NHLGame {
     @JsonFormat(shape = Shape.STRING, pattern = "yyyy-MM-dd")
     private Date date;
     private String time;
-    private NHLTeam awayTeam;
-    private NHLTeam homeTeam;
+    private Team awayTeam;
+    private Team homeTeam;
     private String location;
     private String scheduleStatus;
     @JsonFormat(shape = Shape.STRING, pattern = "yyyy-MM-dd")

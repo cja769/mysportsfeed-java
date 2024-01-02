@@ -16,6 +16,7 @@ public class NHLPlayerGameLogsParams extends CommonSeasonParams {
 
     private List<String> teams;
     private List<String> players;
+    private List<String> positions;
     private String date;
     private List<String> games;
     private List<String> playerStats;
@@ -24,7 +25,10 @@ public class NHLPlayerGameLogsParams extends CommonSeasonParams {
     private Integer limit;
 
     public String buildUrlString(String baseUrl, String apiSlug) {
-        StringBuilder sb = new StringBuilder(super.buildUrlString(baseUrl, apiSlug));
+        if (date == null || date.isBlank()) {
+            throw new IllegalArgumentException("Date is required");
+        }
+        StringBuilder sb = new StringBuilder(super.buildUrlString(baseUrl, "/date/" + date + apiSlug));
         if (sb.indexOf("?") == -1) {
             sb.append("?");
         } else {
@@ -32,9 +36,9 @@ public class NHLPlayerGameLogsParams extends CommonSeasonParams {
         }
         addParameter("team", sb, getTeams());
         addParameter("player", sb, getPlayers());
-        addParameter("date", sb, getDate());
+        addParameter("position", sb, getPositions());
         addParameter("game", sb, getGames());
-        addParameter("playerstats", sb, getPlayerStats());
+        addParameter("stats", sb, getPlayerStats());
         addSortParameters("sort", sb, getSortParams());
         addParameter("offset", sb, getOffset());
         addParameter("limit", sb, getLimit());

@@ -13,6 +13,7 @@ import java.util.Map;
 @Data
 @SuperBuilder
 public class NHLCumulativePlayerStatsParams extends CommonSeasonParams {
+    private List<String> dates;
     private List<String> teams;
     private List<String> players;
     private List<String> positions;
@@ -30,6 +31,7 @@ public class NHLCumulativePlayerStatsParams extends CommonSeasonParams {
             sb.append("&");
         }
         addParameter("team", sb, getTeams());
+        addParameter("date", sb, getDates());
         addParameter("player", sb, getPlayers());
         addParameter("position", sb, getPositions());
         addParameter("country", sb, getCountries());

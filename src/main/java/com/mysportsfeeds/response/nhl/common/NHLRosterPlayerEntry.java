@@ -1,9 +1,11 @@
 package com.mysportsfeeds.response.nhl.common;
 
+import com.mysportsfeeds.response.common.DetailedPlayer;
+import com.mysportsfeeds.response.common.Team;
 import lombok.Data;
 
 @Data
 public class NHLRosterPlayerEntry {
-    private NHLDetailedPlayer player;
-    private NHLTeam team;
+    private DetailedPlayer player;
+    private Team team;
 }

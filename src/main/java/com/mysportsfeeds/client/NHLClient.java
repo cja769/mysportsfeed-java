@@ -12,22 +12,18 @@ import lombok.Setter;
 public class NHLClient extends BaseClient {
 
     @Setter
-    private String baseUrl = "https://api.mysportsfeeds.com/v1.2/pull/nhl";
+    private String baseUrl = "https://api.mysportsfeeds.com/v2.0/pull/nhl";
 
     public NHLClient(String apiKey, String password) {
         super(apiKey, password);
     }
 
     public NHLFullGameScheduleResponse getFullGameSchedule(NHLFullGameScheduleParams params) throws MySportsFeedsException {
-        return execute(params.buildUrlString(baseUrl, "/full_game_schedule"), NHLFullGameScheduleResponse.class);
+        return execute(params.buildUrlString(baseUrl, "/games"), NHLFullGameScheduleResponse.class);
     }
 
     public NHLDailyGameScheduleResponse getDailyGameSchedule(NHLDailyGameScheduleParams params) throws MySportsFeedsException {
-        return execute(params.buildUrlString(baseUrl, "/daily_game_schedule"), NHLDailyGameScheduleResponse.class);
-    }
-
-    public NHLScoreboardResponse getScoreboard(NHLScoreboardParams params) throws MySportsFeedsException {
-        return execute(params.buildUrlString(baseUrl, "/scoreboard"), NHLScoreboardResponse.class);
+        return execute(params.buildUrlString(baseUrl, "/games"), NHLDailyGameScheduleResponse.class);
     }
 
     public NHLLatestUpdatesResponse getLatestUpdates(CommonSeasonParams params) throws MySportsFeedsException {
@@ -39,7 +35,7 @@ public class NHLClient extends BaseClient {
     }
 
     public NHLCumulativePlayerStatsResponse getCumulativePlayerStats(NHLCumulativePlayerStatsParams params) throws MySportsFeedsException {
-        return execute(params.buildUrlString(baseUrl, "/cumulative_player_stats"), NHLCumulativePlayerStatsResponse.class);
+        return execute(params.buildUrlString(baseUrl, "/player_stats_totals"), NHLCumulativePlayerStatsResponse.class);
     }
 
     public NHLDailyPlayerStatsResponse getDailyPlayerStats(NHLDailyPlayerStatsParams params) throws MySportsFeedsException {

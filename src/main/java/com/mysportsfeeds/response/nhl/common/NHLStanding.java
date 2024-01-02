@@ -1,11 +1,13 @@
 package com.mysportsfeeds.response.nhl.common;
 
+import com.mysportsfeeds.response.common.Stats;
+import com.mysportsfeeds.response.common.Team;
 import lombok.Data;
 
 @Data
 public class NHLStanding {
 
-    private NHLTeam team;
+    private Team team;
     private Integer rank;
-    private NHLStats stats;
+    private Stats stats;
 }

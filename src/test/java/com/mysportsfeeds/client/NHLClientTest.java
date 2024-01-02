@@ -11,10 +11,10 @@ import java.util.List;
 public class NHLClientTest {
 
     private final NHLClient sut;
-    private final String baseUrl = "https://scrambled-api.mysportsfeeds.com/v1.2/pull/nhl";
+    private final String baseUrl = "https://scrambled-api.mysportsfeeds.com/v2.0/pull/nhl";
 
     public NHLClientTest() {
-        NHLClient nhlClient = new NHLClient("apikey", "password");
+        NHLClient nhlClient = new NHLClient("a950673e-22ef-4b1a-af12-2e38f7", "MYSPORTSFEEDS");
         nhlClient.setBaseUrl(baseUrl);
         this.sut = nhlClient;
     }
@@ -37,16 +37,6 @@ public class NHLClientTest {
             .date("20230417")
             .build();
         sut.getDailyGameSchedule(params);
-    }
-
-    @Test
-    public void test_getScoreboard() throws MySportsFeedsException {
-        NHLScoreboardParams params = NHLScoreboardParams.builder()
-            .seasonType(SeasonType.PLAYOFF)
-            .startYear(2023)
-            .date("20230418")
-            .build();
-        sut.getScoreboard(params);
     }
 
     @Test
@@ -76,23 +66,12 @@ public class NHLClientTest {
     }
 
     @Test
-    public void test_getDailyPlayerStats() throws MySportsFeedsException {
-        NHLDailyPlayerStatsParams params = NHLDailyPlayerStatsParams.builder()
-            .seasonType(SeasonType.REGULAR)
-            .startYear(2022)
-            .endYear(2023)
-            .date("20221008")
-            .build();
-        sut.getDailyPlayerStats(params);
-    }
-
-    @Test
     public void test_getPlayerGameLogs() throws MySportsFeedsException {
         NHLPlayerGameLogsParams params = NHLPlayerGameLogsParams.builder()
             .seasonType(SeasonType.REGULAR)
             .startYear(2022)
             .endYear(2023)
-            .teams(List.of("bos"))
+            .date("20221011")
             .build();
         sut.getPlayerGameLogs(params);
     }
@@ -103,6 +82,7 @@ public class NHLClientTest {
             .seasonType(SeasonType.REGULAR)
             .startYear(2022)
             .endYear(2023)
+            .date("20221012")
             .teams(List.of("bos"))
             .build();
         sut.getTeamGameLogs(params);

@@ -1,32 +1,25 @@
 package com.mysportsfeeds.response.nhl;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.mysportsfeeds.response.nhl.common.*;
-import com.mysportsfeeds.response.nhl.common.NHLPlayerStats.NHLPlayerStatEntry;
+import com.mysportsfeeds.response.common.DetailedPlayer;
+import com.mysportsfeeds.response.common.Stats;
+import com.mysportsfeeds.response.common.References;
+import com.mysportsfeeds.response.common.Team;
 import lombok.Data;
 
 import java.util.List;
 
 @Data
 public class NHLCumulativePlayerStatsResponse {
-
-    @JsonProperty("cumulativeplayerstats")
-    private NHLCumulativePlayerStats cumulativePlayerStats;
+    private String lastUpdatedOn;
+    private List<NHLCumulativePlayerStatEntry> playerStatsTotals;
+    private References references;
 
     @Data
-    public static class NHLCumulativePlayerStats {
-        private String lastUpdatedOn;
-        @JsonProperty("playerstatsentry")
-        private List<NHLCumulativePlayerStatEntry> playerStatsEntries;
+    public static class NHLCumulativePlayerStatEntry {
 
-        @Data
-        public static class NHLCumulativePlayerStatEntry {
-
-            private NHLDetailedPlayer player;
-            private NHLTeam team;
-            private NHLStats stats;
-
-        }
+        private DetailedPlayer player;
+        private Team team;
+        private Stats stats;
 
     }
 }

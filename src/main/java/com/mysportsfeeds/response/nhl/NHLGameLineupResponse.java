@@ -2,8 +2,8 @@ package com.mysportsfeeds.response.nhl;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mysportsfeeds.response.nhl.common.NHLGame;
-import com.mysportsfeeds.response.nhl.common.NHLPlayer;
-import com.mysportsfeeds.response.nhl.common.NHLTeam;
+import com.mysportsfeeds.response.common.Player;
+import com.mysportsfeeds.response.common.Team;
 import lombok.Data;
 
 import java.util.List;
@@ -26,7 +26,7 @@ public class NHLGameLineupResponse {
 
             private NHLStarter actual;
 
-            private NHLTeam team;
+            private Team team;
 
             @Data
             public static class NHLStarter {
@@ -37,7 +37,7 @@ public class NHLGameLineupResponse {
                 @Data
                 public static  class NHLStarterPlayer {
 
-                    private NHLPlayer player;
+                    private Player player;
                     private String position;
                 }
             }
